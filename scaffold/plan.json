@@ -15,27 +15,41 @@
           "on_fail": [
             {
               "id": "console_default",
-              "message": "@GETDATE('YYYY-MM-DD HH:mm:ss') ERROR: PROCESS @GV(PROCESS_ID): @GV(PROCESS_EXEC_ERR_OUTPUT)",
+              "message": "@GETDATE('YYYY-MM-DD HH:mm:ss') ERROR: PROCESS @GV(PROCESS_ID):\n@GV(PROCESS_EXEC_ERR_OUTPUT)",
               "mode": "error"
             }
           ],
           "on_end": [
             {
               "id": "console_default",
-              "message": "@GETDATE('YYYY-MM-DD HH:mm:ss') END: PROCESS @GV(PROCESS_ID)"
+              "message": "@GETDATE('YYYY-MM-DD HH:mm:ss') END: PROCESS @GV(PROCESS_ID) - TOTAL TESTS PASSES: @GV(PROCESS_EXEC_TOTALPASSED) / TOTAL TESTS FAILED: @GV(PROCESS_EXEC_TOTALFAILED)"
             }
           ]
         }
       },
       "processes": [
         {
-          "id": "CYPRESS_SIMPLE_SPEC_TEST",
-          "name": "CYPRESS SIMPLE TEST",
+          "id": "CYPRESS_SIMPLE_SPEC_B_TEST",
+          "name": "CYPRESS SIMPLE SPEC B TEST",
           "exec": {
             "id": "cypress_default",
-            "spec": "./tests/test.spec.js",
+            "spec": "./cypress/integration/sample-b.spec.js",
             "config": {
-              "integrationFolder": "./tests"
+              "baseUrl": "https://runnerty.io/"
+            }
+          }
+        },
+        {
+          "id": "CYPRESS_SIMPLE_INTEGRATION_TESTS_1_FAIL",
+          "name": "CYPRESS SIMPLE INTEGRATION TESTS 1 FAIL",
+          "depends_process": ["CYPRESS_SIMPLE_SPEC_B_TEST"],
+          "exec": {
+            "id": "cypress_default",
+            "browser": "chrome",
+            "config": {
+              "baseUrl": "https://runnerty.io/",
+              "integrationFolder": "./cypress/integration/",
+              "video": true
             }
           }
         }

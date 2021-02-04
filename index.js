@@ -43,9 +43,14 @@ class cypressExportExecutor extends Executor {
   }
 
   async exec(opt) {
-    const options = lodash.defaultsDeep(restricted, opt, defaults);
+    const options = lodash.defaultsDeep(
+      lodash.cloneDeep(restricted),
+      lodash.cloneDeep(opt),
+      lodash.cloneDeep(defaults)
+    );
     try {
       const results = await cypress.run(options);
+
       if (results.failures) {
         this.endOptions.end = 'error';
         this.endOptions.msg_output = results.message;
