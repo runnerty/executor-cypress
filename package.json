@@ -1,0 +1,39 @@
+{
+  "name": "@runnerty/executor-cypress",
+  "version": "3.0.0-rc",
+  "description": "Runnerty module: Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint '**/*.js' && prettier --check '**'"
+  },
+  "author": "Runnerty Tech",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/runnerty/executor-cypress.git"
+  },
+  "keywords": [
+    "runnerty",
+    "cypress",
+    "test",
+    "testing",
+    "e2e"
+  ],
+  "bugs": {
+    "url": "https://github.com/runnerty/executor-cypress/issues"
+  },
+  "homepage": "https://github.com/runnerty/executor-cypress#readme",
+  "dependencies": {
+    "@runnerty/module-core": "~3.0.2",
+    "chalk": "~4.1.0",
+    "cypress": "~6.4.0",
+    "lodash": "~4.17.20"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.1.2"
+  }
+}

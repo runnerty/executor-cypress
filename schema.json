@@ -1,0 +1,229 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "@runnerty-executor-cypress",
+  "definitions": {
+    "config": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "pattern": "@runnerty-executor-cypress"
+        }
+      }
+    },
+    "params": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "browser": {
+          "type": "string",
+          "description": "Specify different browser to run tests in, either by name or by filesystem path. default: chrome."
+        },
+        "ciBuildId": {
+          "type": "string",
+          "description": "Specify a unique identifier for a run to enable grouping or parallelization"
+        },
+        "group": { "type": "string", "description": "Group recorded tests together under a single run name" },
+        "tag": { "type": "string", "description": "Tag string for the recorded run, like 'production,nightly'" },
+        "headed": { "type": "boolean", "description": "Display the browser instead of running headlessly" },
+        "headless": { "type": "boolean", "description": "Hide the browser instead of running headed. default: true." },
+        "key": { "type": "string", "description": "Specify your secret record key" },
+        "noExit": { "type": "boolean", "description": "Keep Cypress open after all tests run" },
+        "parallel": { "type": "boolean", "description": "Run recorded specs in parallel across multiple machines" },
+        "port": { "type": "number", "description": "Override default port" },
+        "quiet": {
+          "type": "boolean",
+          "description": "Run quietly, using only the configured reporter. default: true."
+        },
+        "record": { "type": "boolean", "description": "Whether to record the test run" },
+        "reporter": { "type": "string", "description": "Specify a mocha reporter. default: junit." },
+        "reporterOptions": {
+          "type": "object",
+          "description": "Specify mocha reporter options. default: { toConsole: false }"
+        },
+        "spec": { "type": "string", "description": "Specify the specs to run" },
+        "configFile": {
+          "type": ["string", "boolean"],
+          "description": "Path to the config file to be used. If false is passed, no config file will be used."
+        },
+        "config": {
+          "type": "object",
+          "properties": {
+            "baseUrl": {
+              "type": "string",
+              "description": "Url used as prefix for [cy.visit()](https://on.cypress.io/visit) or [cy.request()](https://on.cypress.io/request) command’s url"
+            },
+            "env": {
+              "type": "object",
+              "description": "Any values to be set as [environment variables](https://docs.cypress.io/guides/guides/environment-variables.html)"
+            },
+            "ignoreTestFiles": {
+              "type": ["string", "array"],
+              "description": "A String or Array of glob patterns used to ignore test files that would otherwise be shown in your list of tests. Cypress uses minimatch with the options: {dot: true, matchBase: true}. We suggest using http://globtester.com to test what files would match."
+            },
+            "numTestsKeptInMemory": {
+              "type": "number",
+              "description": "The number of tests for which snapshots and command data are kept in memory. Reduce this number if you are experiencing high memory consumption in your browser during a test run."
+            },
+            "port": {
+              "type": "number",
+              "description": "Port used to host Cypress. Normally this is a randomly generated port"
+            },
+            "reporter": {
+              "type": "string",
+              "description": "The [reporter](https://docs.cypress.io/guides/guides/reporters.html) used when running headlessly or in CI"
+            },
+            "reporterOptions": {
+              "type": "object",
+              "description": "Some reporters accept [reporterOptions](https://on.cypress.io/reporters) that customize their behavior"
+            },
+            "watchForFileChanges": {
+              "type": "boolean",
+              "description": "Whether Cypress will watch and restart tests on test file changes"
+            },
+            "defaultCommandTimeout": {
+              "type": "number",
+              "description": "Time, in milliseconds, to wait until most DOM based commands are considered timed out"
+            },
+            "execTimeout": {
+              "type": "number",
+              "description": "Time, in milliseconds, to wait for a system command to finish executing during a [cy.exec()](https://on.cypress.io/exec) command"
+            },
+            "pageLoadTimeout": {
+              "type": "number",
+              "description": "Time, in milliseconds, to wait for page transition events or [cy.visit()](https://on.cypress.io/visit), [cy.go()](https://on.cypress.io/go), [cy.reload()](https://on.cypress.io/reload) commands to fire their page load events"
+            },
+            "requestTimeout": {
+              "type": "number",
+              "description": "Time, in milliseconds, to wait for an XHR request to go out in a [cy.wait()](https://on.cypress.io/wait) command"
+            },
+            "responseTimeout": {
+              "type": "number",
+              "description": "Time, in milliseconds, to wait until a response in a [cy.request()](https://on.cypress.io/request)"
+            },
+            "taskTimeout": {
+              "type": "number",
+              "description": "Time, in milliseconds, to wait for a task to finish executing during a cy.task() command"
+            },
+            "fileServerFolder": {
+              "type": "string",
+              "description": "Path to folder where application files will attempt to be served from"
+            },
+            "fixturesFolder": {
+              "type": "string",
+              "description": "Path to folder containing fixture files (Pass false to disable). default: 'cypress/fixtures'"
+            },
+            "integrationFolder": {
+              "type": "string",
+              "description": "Path to folder containing integration test files. default: 'cypress/integration'"
+            },
+            "downloadsFolder": {
+              "type": "string",
+              "description": "Path to folder where files downloaded during a test are saved. default: 'cypress/downloads'"
+            },
+            "nodeVersion": {
+              "type": "string",
+              "description": "If set to `system`, Cypress will try to find a `node` executable on your path to use when executing your plugins. Otherwise, Cypress will use the Node version bundled with Cypress. default: 'bundled'"
+            },
+            "pluginsFile": {
+              "type": ["string", "boolean"],
+              "description": "Path to plugins file. (Pass false to disable). default: 'cypress/plugins/index.js'"
+            },
+            "resolvedNodePath": {
+              "type": "string",
+              "description": "If `nodeVersion === 'system'` and a `node` executable is found, this will be the full filesystem path to that executable."
+            },
+            "resolvedNodeVersion": {
+              "type": "string",
+              "description": "The version of `node` that is being used to execute plugins. example 1.2.3"
+            },
+            "screenshotOnRunFailure": {
+              "type": "boolean",
+              "description": "Whether Cypress will take a screenshot when a test fails during cypress run."
+            },
+            "screenshotsFolder": {
+              "type": ["string", "boolean"],
+              "description": "Path to folder where screenshots will be saved from [cy.screenshot()](https://on.cypress.io/screenshot) command or after a headless or CI run’s test failure. default: 'cypress/screenshots'"
+            },
+            "supportFile": {
+              "type": ["string", "boolean"],
+              "description": "Path to file to load before test files load. This file is compiled and bundled. (Pass false to disable). default: 'cypress/support/index.js'"
+            },
+            "videosFolder": {
+              "type": "string",
+              "description": "Path to folder where videos will be saved after a headless or CI run. default: 'cypress/videos'"
+            },
+            "trashAssetsBeforeRuns": {
+              "type": "boolean",
+              "description": "Whether Cypress will trash assets within the screenshotsFolder and videosFolder before headless test runs. default: true."
+            },
+            "videoCompression": {
+              "type": ["number", "boolean"],
+              "description": "The quality setting for the video compression, in Constant Rate Factor (CRF). The value can be false to disable compression or a value between 0 and 51, where a lower value results in better quality (at the expense of a higher file size). default: 32"
+            },
+            "video": {
+              "type": "boolean",
+              "description": "Whether Cypress will record a video of the test run when running headlessly. default: false."
+            },
+            "videoUploadOnPasses": {
+              "type": "boolean",
+              "description": "Whether Cypress will upload the video to the Dashboard even if all tests are passing. This applies only when recording your runs to the Dashboard. Turn this off if you’d like the video uploaded only when there are failing tests. default: true."
+            },
+            "chromeWebSecurity": {
+              "type": "boolean",
+              "description": "Whether Chrome Web Security for same-origin policy and insecure mixed content is enabled. Read more about this here. default: true."
+            },
+            "viewportHeight": {
+              "type": "number",
+              "description": "Default height in pixels for the application under tests’ viewport (Override with [cy.viewport()](https://on.cypress.io/viewport) command). default: 660."
+            },
+            "viewportWidth": {
+              "type": "number",
+              "description": "Default width in pixels for the application under tests’ viewport. (Override with [cy.viewport()](https://on.cypress.io/viewport) command). default: 1000."
+            },
+            "animationDistanceThreshold": {
+              "type": "number",
+              "description": "The distance in pixels an element must exceed over time to be considered animating. default: 5."
+            },
+            "waitForAnimations": {
+              "type": "boolean",
+              "description": "Whether to wait for elements to finish animating before executing commands. default: true."
+            },
+            "scrollBehavior": {
+              "type": ["string", "boolean"],
+              "description": "Viewport position to which an element should be scrolled prior to action commands. Setting `false` disables scrolling. default: 'top'"
+            },
+            "firefoxGcInterval": {
+              "type": ["number", "object"],
+              "description": "Firefox version 79 and below only: The number of tests that will run between forced garbage collections. default: { runMode: 1, openMode: null }"
+            },
+            "experimentalRunEvents": {
+              "type": "boolean",
+              "description": "Allows listening to the `before:run`, `after:run`, `before:spec`, and `after:spec` events in the plugins file. default: false."
+            },
+            "experimentalSourceRewriting": {
+              "type": "boolean",
+              "description": "Enables AST-based JS/HTML rewriting. This may fix issues caused by the existing regex-based JS/HTML replacement algorithm. default: false."
+            },
+            "experimentalStudio": {
+              "type": "boolean",
+              "description": "Generate and save commands directly to your test suite by interacting with your app as an end user would.. default: false."
+            },
+            "retries": {
+              "type": ["number", "object"],
+              "description": "Number of times to retry a failed test. If a number is set, tests will retry in both runMode and openMode. To enable test retries only in runMode, set e.g. { openMode: null, runMode: 2 }. default: null"
+            },
+            "includeShadowDom": {
+              "type": "boolean",
+              "description": "Enables including elements within the shadow DOM when using querying. commands (e.g. cy.get(), cy.find()). Can be set globally in cypress.json per-suite or per-test in the test configuration object, or programmatically with Cypress.config(), default: false."
+            }
+          }
+        }
+      }
+    }
+  }
+}

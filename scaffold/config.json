@@ -1,0 +1,8 @@
+{
+  "executors": [
+    {
+      "id": "cypress_default",
+      "type": "@runnerty-executor-cypress"
+    }
+  ]
+}
