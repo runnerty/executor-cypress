@@ -1,8 +1,9 @@
 node_modules
-.all-contributorsrc
 .eslintignore
 .gitignore
 .prettierignore
+*.spec.js
+.npmignore
 LICENSE
 *.png
 *.txt
