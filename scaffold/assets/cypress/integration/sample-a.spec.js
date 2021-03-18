@@ -1,3 +1,5 @@
+/// <reference types="Cypress" />
+
 describe('Runnerty IO Home Test A', () => {
   it('Load Test [A-1]', () => {
     cy.visit('/');

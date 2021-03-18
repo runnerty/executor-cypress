@@ -1,6 +1,6 @@
 {
   "name": "@runnerty/executor-cypress",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Runnerty module: Cypress",
   "main": "index.js",
   "scripts": {
