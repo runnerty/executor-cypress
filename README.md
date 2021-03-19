@@ -231,11 +231,11 @@ It is also possible to access the rest of the [values returned by Cypress](https
 - `PROCESS_EXEC_BROWSERNAME`: Browser name
 - `PROCESS_EXEC_REPORTER`: Reporter
 - `PROCESS_EXEC_RUNURL`: Run URL
-- `PROCESS_EXEC_TESTS_0_STATE`: State of test number 1
-- `PROCESS_EXEC_TESTS_0_STATE`: State of test number 1
-- `PROCESS_EXEC_TESTS_0_DISPLAYERROR`: Display error of test number 1
-- `PROCESS_EXEC_TESTS_0_SCREENSHOTS_0`: ScreenShot path 1 of test number 1
-- `PROCESS_EXEC_TESTS_0_VIDEO`: Video of test number 1
+- `PROCESS_EXEC_RUNS_0_STATE`: State of test number 1
+- `PROCESS_EXEC_RUNS_0_STATE`: State of test number 1
+- `PROCESS_EXEC_RUNS_0_DISPLAYERROR`: Display error of test number 1
+- `PROCESS_EXEC_RUNS_0_SCREENSHOTS_0`: ScreenShot path 1 of test number 1
+- `PROCESS_EXEC_RUNS_0_VIDEO`: Video of test number 1
 
 [runnerty]: http://www.runnerty.io
 [downloads-image]: https://img.shields.io/npm/dm/@runnerty/executor-cypress.svg

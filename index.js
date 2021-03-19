@@ -103,9 +103,9 @@ class cypressExportExecutor extends Executor {
       }
     } catch (err) {
       this.endOptions.end = 'error';
-      this.endOptions.msg_output = err;
-      this.endOptions.messageLog = err;
-      this.endOptions.err_output = err;
+      this.endOptions.msg_output = err.message;
+      this.endOptions.messageLog = err.message;
+      this.endOptions.err_output = err.message;
     }
     this.end(this.endOptions);
   }
