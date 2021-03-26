@@ -33,10 +33,7 @@
           "name": "CYPRESS SIMPLE SPEC B TEST",
           "exec": {
             "id": "cypress_default",
-            "spec": "./cypress/integration/sample-b.spec.js",
-            "config": {
-              "baseUrl": "https://runnerty.io/"
-            }
+            "spec": "./cypress/integration/sample-b.spec.js"
           }
         },
         {
@@ -47,8 +44,6 @@
             "id": "cypress_default",
             "browser": "chrome",
             "config": {
-              "baseUrl": "https://runnerty.io/",
-              "integrationFolder": "./cypress/integration/",
               "video": true
             }
           }

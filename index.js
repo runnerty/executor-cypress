@@ -27,7 +27,6 @@ const defaults = {
     toConsole: false
   },
   quiet: true,
-  configFile: false,
   config: {
     video: false,
     watchForFileChanges: false

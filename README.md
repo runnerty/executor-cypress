@@ -87,7 +87,6 @@ Add in [plan.json]:
     "toConsole": false
   },
   "spec": ".tests/my_test.spec.js",
-  "configFile": false,
   "config": {
     "baseUrl": "https://runnerty.io",
     "env": {
