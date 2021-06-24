@@ -58,6 +58,8 @@ Add in [plan.json]:
   "id": "cypress_default",
   "exec": {
     "id": "cypress_default",
+    "browser": "chrome",
+    "configFile": false,
     "config": {
       "integrationFolder": "./tests"
     }
