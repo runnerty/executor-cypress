@@ -2,7 +2,9 @@
   "executors": [
     {
       "id": "cypress_default",
-      "type": "@runnerty-executor-cypress"
+      "type": "@runnerty-executor-cypress",
+      "browser": "chrome",
+      "configFile": false
     }
   ]
 }
