@@ -22,18 +22,18 @@ Through NPM
 npm i @runnerty/executor-cypress
 ```
 
-You can also add modules to your project with [runnerty-cli]
+You can also add modules to your project with [runnerty]
 
 ```bash
-npx runnerty-cli add @runnerty/executor-cypress
+npx runnerty add @runnerty/executor-cypress
 ```
 
-This command installs the module in your project, adds example configuration in your `config.json` and creates an example plan of use.
+This command installs the module in your project, adds example configuration in your [config.json] and creates an example plan of use.
 
-If you have installed [runnerty-cli] globally you can include the module with this command:
+If you have installed [runnerty] globally you can include the module with this command:
 
 ```bash
-rty add @runnerty/executor-cypress
+runnerty add @runnerty/executor-cypress
 ```
 
 **Please check Cypress [system requirements](https://docs.cypress.io/guides/getting-started/installing-cypress.html#System-requirements)**.
@@ -238,7 +238,7 @@ It is also possible to access the rest of the [values returned by Cypress](https
 - `PROCESS_EXEC_RUNS_0_SCREENSHOTS_0`: ScreenShot path 1 of test number 1
 - `PROCESS_EXEC_RUNS_0_VIDEO`: Video of test number 1
 
-[runnerty]: http://www.runnerty.io
+[runnerty]: https://www.runnerty.io
 [downloads-image]: https://img.shields.io/npm/dm/@runnerty/executor-cypress.svg
 [npm-url]: https://www.npmjs.com/package/@runnerty/executor-cypress
 [npm-image]: https://img.shields.io/npm/v/@runnerty/executor-cypress.svg
@@ -247,4 +247,3 @@ It is also possible to access the rest of the [values returned by Cypress](https
 [config.json]: http://docs.runnerty.io/config/
 [plan.json]: http://docs.runnerty.io/plan/
 [ejs]: https://ejs.co
-[runnerty-cli]: https://www.npmjs.com/package/runnerty-cli

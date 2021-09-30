@@ -1,6 +1,6 @@
 {
   "name": "@runnerty/executor-cypress",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "Runnerty module: Cypress",
   "main": "index.js",
   "scripts": {
@@ -25,15 +25,15 @@
   },
   "homepage": "https://github.com/runnerty/executor-cypress#readme",
   "dependencies": {
-    "@runnerty/module-core": "~3.0.5",
-    "chalk": "~4.1.1",
-    "cypress": "~7.6.0",
-    "lodash": "~4.17.21"
+    "@runnerty/module-core": "~3.0.6",
+    "chalk": "~4.1.2",
+    "cypress": "^8.5.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "eslint": "^7.29.0",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "prettier": "^2.3.1"
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1"
   }
 }
