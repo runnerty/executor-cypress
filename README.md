@@ -111,7 +111,6 @@ Add in [plan.json]:
     "videosFolder": "cypress/videos",
     "ignoreTestFiles": "**/ignoredTestFiles/*.js",
     "screenshotOnRunFailure": false,
-    "nodeVersion": "bundled",
     "supportFile": false,
     "trashAssetsBeforeRuns": true,
     "videoCompression": 32,
